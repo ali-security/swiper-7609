@@ -6,13 +6,13 @@ on:
 
 jobs:
   reply-labeled:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: missing demo
         if: github.event.label.name == 'missing demo'
         uses: actions-cool/issues-helper@v2.2.1
         with:
-          actions: 'create-comment, remove-labels'
+          actions: create-comment, remove-labels
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |

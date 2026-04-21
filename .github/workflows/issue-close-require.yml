@@ -1,17 +1,15 @@
 name: Issue Close Require
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
-
+  workflow_dispatch:
 jobs:
   close-issues:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: missing demo
         uses: actions-cool/issues-helper@v2.2.1
         with:
-          actions: 'close-issues'
+          actions: close-issues
           token: ${{ secrets.GITHUB_TOKEN }}
-          labels: 'missing demo'
+          labels: missing demo
           inactive-day: 3

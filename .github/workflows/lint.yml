@@ -1,12 +1,12 @@
 name: Lint
 on:
   push:
-    branches: [master, Swiper6, Swiper7, Swiper8]
+    branches: [master, Swiper6, Swiper7, Swiper8, main]
   pull_request:
-    branches: [master, Swiper6, Swiper7, Swiper8]
+    branches: [master, Swiper6, Swiper7, Swiper8, main]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
