@@ -8,9 +8,8 @@ function isObject(o) {
 }
 
 function extend(target, src) {
-  const noExtend = ['__proto__', 'constructor', 'prototype'];
   Object.keys(src)
-    .filter((key) => noExtend.indexOf(key) < 0)
+    .filter((key) => key !== '__proto__' && key !== 'constructor' && key !== 'prototype')
     .forEach((key) => {
       if (typeof target[key] === 'undefined') target[key] = src[key];
       else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) {
